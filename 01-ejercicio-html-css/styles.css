@@ -113,13 +113,16 @@ header div {
 header div a {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    background-color: #334155;
-    color: var(--text-primary);
     display: inline-block;
     font-size: 0.875rem;
     font-weight: 700;
     transition: all .4s;
     text-decoration: none;
+}
+
+header div .primary-button {
+    background-color: #334155;
+    color: var(--text-primary);
 
     &:hover, &:focus {
         background-color: rgba(51,65, 85, 0.7);
@@ -127,7 +130,7 @@ header div a {
     }
 }
 
-header div a:first-child {
+header div .secondary-button {
     background: #0F2B45;
     color: var(--primary-light);
 
@@ -342,13 +345,13 @@ header .user-actions a:last-child{
     position: relative;
 }
 
-header .user-actions a:last-child img {
+header .user-actions .primary-button img {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-51%, -47%);
+    transform: translate(-50%, -50%);
     border-radius: 100%;
 }
 
@@ -478,6 +481,10 @@ option {
     border-bottom-left-radius: .5rem;
     border-bottom-right-radius: .5rem;  
 
+    & .is-hidden{
+        display: none;
+    }
+
     & article {
         margin: 0;
         background-color: transparent;
@@ -564,6 +571,185 @@ main nav ul {
             color: var(--text-primary);
             pointer-events: none;
         }
+    }
+}
+
+/* ------------ Offer Section ------------ */
+header .is-active {
+    color: var(--primary);
+    pointer-events: none;    
+}
+
+header form {
+    padding: 0;
+    width: 17rem;
+
+    & svg {
+        color: var(--text-secondary);
+    }
+
+    & input[type="text"]::placeholder{
+        color: var(--text-muted);
+    }
+
+    & > div {
+        padding: 0;
+        background-color: #1F2937;
+        border: 1px solid var(--border);
+    }
+}
+
+/* Navegation Offer Section */
+main > .nav-offer:nth-child(1) {
+    height: 100%;
+    max-width: 85%;
+    padding-inline: 1rem;
+    padding-top: 3.5rem;
+    padding-bottom: 2rem;
+    margin: 0 auto;
+    gap: .5rem;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    & a {
+        text-decoration: none;
+        color: var(--text-secondary);
+        transition: all .4s;
+
+        &:hover, &:focus {
+            color: var(--primary);
+            outline: none;
+        }
+    }
+
+    & p:first-of-type {
+        color: var(--text-muted);
+        font-weight: 100;
+    }
+}
+
+/* Offer Information Section */
+main .offer-information:nth-child(2){
+    max-width: 85%;
+    margin: 0 auto;
+    background-color: #111825;
+    border-radius: .5rem;
+    padding-top: 1rem;
+    margin-bottom: 2rem;
+
+    & header {
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: row;
+        text-align: start;
+        padding-inline: 1rem;
+        background-color: #111825;
+        padding-bottom: 0;
+
+        & div {
+            display: grid;
+            gap: .25rem;
+
+            & .apply-button {
+                background-color: var(--primary-light);
+                color: var(--text-primary);
+                box-shadow: 0px 5px 15px -5px var(--primary-light);
+
+                &:hover, &:focus {
+                    background-color: var(--primary-hover);
+                    color: var(--text-secondary);
+                box-shadow: 0px 5px 15px -5px var(--primary-hover);
+                }
+            }
+        }
+
+        & h2 {
+            margin: 0;
+        }
+
+        & p {
+            text-align: start;
+        }
+    }
+
+    & footer {
+        gap: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding-top: 0;
+
+        & header {
+            flex-direction: column;
+            gap: 0;
+            padding-inline: 0;
+
+            & article {
+                width: 100%;
+                background-color: #111825;
+                border: none;
+                border-radius: 0;
+                box-shadow: none;
+                padding-inline: 0;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                margin-bottom: 0;
+
+                & p {
+                    color: var(--text-secondary);
+                }
+
+                & h3 {
+                    padding-bottom: .75rem;
+                }
+
+                & div {
+                    display: grid;
+                    grid-template-columns: 2rem 1fr;
+                    grid-template-rows: 1;
+                    padding-bottom: .75rem;
+
+                    & svg {
+                        padding: 0;
+                        background-color: transparent;
+                        width: 1.75rem;
+                        height: 1.75rem;
+                    }
+
+                    & p {
+                        margin-left: .5rem;
+                    }
+                }
+
+            }
+        }
+
+        & footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-content: flex-end;
+            align-items: flex-end;
+
+            & .apply-button {
+                background-color: var(--primary-light);
+                font-weight: 700;
+                padding: 0.5rem 1rem;
+                border-radius: .5rem;
+                font-size: 0.875rem;
+                text-decoration: none;
+                color: var(--text-primary);
+                box-shadow: 0px 5px 15px -5px var(--primary-light);
+                transition: all .4s;
+
+                &:hover, &:focus {
+                    background-color: var(--primary-hover);
+                    color: var(--text-secondary);
+                box-shadow: 0px 5px 15px -5px var(--primary-hover);
+                }
+            }
+        }  
     }
 }
 
